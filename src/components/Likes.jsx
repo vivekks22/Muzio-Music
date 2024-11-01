@@ -768,6 +768,7 @@ function pre() {
     {download ? "Downloading..." : "Download All Songs"}
   </button>
   
+  {/*
   <button
     className="hover:scale-105 duration-300 inline-block w-fit h-fit text-md sm:text-sm rounded-md p-3 font-semibold bg-gradient-to-r from-gray-700 to-gray-900 text-white shadow-lg hover:brightness-125 transition-all"
     onClick={() => navigate("/import")}
@@ -781,6 +782,8 @@ function pre() {
   >
     Export Songs
   </button>
+
+  */}
   
   <button
     className="hover:scale-105 duration-300 inline-block w-fit h-fit text-md sm:text-sm rounded-md p-3 font-semibold bg-gradient-to-r from-gray-700 to-gray-900 text-white shadow-lg hover:brightness-125 transition-all"
