@@ -1,0 +1,53 @@
+body {
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text color for contrast */
+    font-family: 'Arial', sans-serif; /* Example font, change as needed */
+  }
+  
+  .search {
+    background-color: #222; /* Search bar background */
+    border-radius: 10px; /* Rounded corners for the search bar */
+    padding: 10px;
+  }
+  
+  input[type="search"] {
+    background-color: #333; /* Input field background */
+    color: #fff; /* Input text color */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .album-card {
+    position: relative;
+    background-color: #444; /* Album card background */
+    color: white; /* Album card text color */
+    width: 180px; /* Square width */
+    height: 180px; /* Square height */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Clip the corners */
+    transition: transform 0.3s; /* Animation for hover effect */
+  }
+  
+  .album-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  .album-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the card */
+  }
+  
+  .album-title {
+    position: absolute;
+    bottom: 10px; /* Position title at the bottom */
+    left: 5px; /* Left padding */
+    right: 5px; /* Right padding */
+    text-align: center; /* Center text */
+    font-size: 16px; /* Font size for the album title */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for long text */
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
