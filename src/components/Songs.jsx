@@ -150,40 +150,40 @@ const Songs = () => {
     }
 
     // Check if the new data already exists in the existing data
-    let exists = updatedData.some((item) => item.id === i.id);
+let exists = updatedData.some((item) => item.id === i.id);
 
-    if (!exists) {
-      // If not, add the new data
-      updatedData.push(i);
-      // Store the updated data back into localStorage
-      localStorage.setItem("likeData", JSON.stringify(updatedData));
-      setlike(true);
-    
-      // Toast notification with premium styling
-      toast(`Song (${i?.name}) added to Likes section`, {
-        icon: "✅",
-        duration: 1500,
-        position: "bottom-center", // Position the toast at the bottom center
-        style: {
-          borderRadius: "10px", // Rounded for a premium look
-          width: "fit-content", // Adjusts width to content
-          maxWidth: "80%", // Prevents it from getting too wide
-          background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
-          color: "#ffffff", // White text for readability
-          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Premium shadow
-          padding: "12px 20px", // Extra padding for spacing
-          fontSize: "0.9rem",
-          fontWeight: "bold",
-          textAlign: "center",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          lineHeight: "1.2", // For better readability
-          borderLeft: "5px solid #4CAF50", // Green accent for "added" action
-        },
-      });
-    }
-     else {
+if (!exists) {
+  // If not, add the new data
+  updatedData.push(i);
+  // Store the updated data back into localStorage
+  localStorage.setItem("likeData", JSON.stringify(updatedData));
+  setlike(true);
+
+  // Toast notification for successful addition
+  toast(`Song (${i?.name}) added to Likes section`, {
+    icon: "✅",
+    duration: 1500,
+    position: "bottom-center", // Position at the bottom center of the screen
+    style: {
+      borderRadius: "10px", // Slightly rounded corners for a premium look
+      width: "fit-content", // Auto-size based on content
+      maxWidth: "80%", // Limit width for larger screens
+      background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
+      color: "#e0e0e0", // Light color for text
+      boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Stronger shadow for depth
+      padding: "12px 20px", // Extra padding for better spacing
+      fontSize: "0.9rem", // Slightly reduced font size for better fit
+      fontWeight: "bold", // Bold text for emphasis
+      textAlign: "center", // Center the text
+      display: "flex", // Flexbox layout for centering
+      alignItems: "center", // Center vertically
+      justifyContent: "center", // Center horizontally
+      lineHeight: "1.2", // Improved line height for readability
+      borderLeft: "5px solid #4caf50", // Green accent for "added" action
+    },
+  });
+}
+ else {
       setlike(false);
       let existingData = localStorage.getItem("likeData");
 
@@ -192,12 +192,12 @@ const Songs = () => {
         console.log("No data found in localStorage.");
         return;
       }
-      // Parse the existing data from JSON
+      // Update local storage with the current like data
       let updatedData = JSON.parse(existingData);
-
+      
       // Find the index of the song with the given ID in the existing data
       const indexToRemove = updatedData.findIndex((item) => item.id === i.id);
-
+      
       // If the song is found, remove it from the array
       if (indexToRemove !== -1) {
         updatedData.splice(indexToRemove, 1);
@@ -205,31 +205,30 @@ const Songs = () => {
         // Store the updated data back into localStorage
         localStorage.setItem("likeData", JSON.stringify(updatedData));
       
-        // Toast notification with premium styling for removal
+        // Toast notification for successful removal
         toast(`Song (${i?.name}) removed successfully.`, {
           icon: "⚠️",
           duration: 1500,
           position: "bottom-center", // Position at the bottom center of the screen
           style: {
-            borderRadius: "10px", // Rounded corners for premium look
+            borderRadius: "10px", // Rounded corners for a premium look
             width: "fit-content", // Auto-size based on content
             maxWidth: "80%", // Prevents it from being too wide on larger screens
-            background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
-            color: "#ffffff", // White text for readability
-            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth effect
-            padding: "12px 20px", // Extra padding for spacing
-            fontSize: "0.9rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            lineHeight: "1.2", // Line height for better readability
+            background: "linear-gradient(135deg, #333, #444)", // Smooth gradient for contrast
+            color: "#e0e0e0", // Light color for text
+            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Stronger shadow for depth
+            padding: "12px 20px", // Extra padding for better spacing
+            fontSize: "0.9rem", // Slightly smaller font size for better fit
+            fontWeight: "bold", // Bold text for emphasis
+            textAlign: "center", // Center the text
+            display: "flex", // Flexbox layout for centering
+            alignItems: "center", // Center vertically
+            justifyContent: "center", // Center horizontally
+            lineHeight: "1.2", // Improved line height for readability
             borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
           },
         });
-      }
-       else {
+      } else {
         toast.error("Song not found in localStorage.");
         //   console.log("Song not found in localStorage.");
       }
@@ -249,40 +248,40 @@ const Songs = () => {
     }
 
     // Check if the new data already exists in the existing data
-    let exists = updatedData.some((item) => item.id === i.id);
+let exists = updatedData.some((item) => item.id === i.id);
 
-    if (!exists) {
-      // If not, add the new data
-      updatedData.push(i);
-      // Store the updated data back into localStorage
-      localStorage.setItem("likeData", JSON.stringify(updatedData));
-      setlike(true);
-    
-      // Toast notification with premium styling
-      toast(`Song (${i?.name}) added to Likes section`, {
-        icon: "✅",
-        duration: 1500,
-        position: "bottom-center", // Position the toast at the bottom center
-        style: {
-          borderRadius: "10px", // Rounded for a premium look
-          width: "fit-content", // Adjusts width to content
-          maxWidth: "80%", // Prevents it from getting too wide
-          background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
-          color: "#ffffff", // White text for readability
-          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Premium shadow
-          padding: "12px 20px", // Extra padding for spacing
-          fontSize: "0.9rem",
-          fontWeight: "bold",
-          textAlign: "center",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          lineHeight: "1.2", // For better readability
-          borderLeft: "5px solid #4CAF50", // Green accent for "added" action
-        },
-      });
-    }
-     else {
+if (!exists) {
+  // If not, add the new data
+  updatedData.push(i);
+  // Store the updated data back into localStorage
+  localStorage.setItem("likeData", JSON.stringify(updatedData));
+  setlike(true);
+
+  // Toast notification for successful addition
+  toast(`Song (${i?.name}) added to Likes section`, {
+    icon: "✅",
+    duration: 1500,
+    position: "bottom-center", // Position at the bottom center of the screen
+    style: {
+      borderRadius: "10px", // Slightly rounded corners for a premium look
+      width: "fit-content", // Auto-size based on content
+      maxWidth: "80%", // Limit width for larger screens
+      background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
+      color: "#e0e0e0", // Light color for text
+      boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Stronger shadow for depth
+      padding: "12px 20px", // Extra padding for better spacing
+      fontSize: "0.9rem", // Slightly reduced font size for better fit
+      fontWeight: "bold", // Bold text for emphasis
+      textAlign: "center", // Center the text
+      display: "flex", // Flexbox layout for centering
+      alignItems: "center", // Center vertically
+      justifyContent: "center", // Center horizontally
+      lineHeight: "1.2", // Improved line height for readability
+      borderLeft: "5px solid #4caf50", // Green accent for "added" action
+    },
+  });
+}
+ else {
 
       setlike2(!like2);
       let existingData = localStorage.getItem("likeData");
@@ -293,11 +292,12 @@ const Songs = () => {
         return;
       }
       // Parse the existing data from JSON
+      // Update local storage with the current like data
       let updatedData = JSON.parse(existingData);
-
+      
       // Find the index of the song with the given ID in the existing data
       const indexToRemove = updatedData.findIndex((item) => item.id === i.id);
-
+      
       // If the song is found, remove it from the array
       if (indexToRemove !== -1) {
         updatedData.splice(indexToRemove, 1);
@@ -305,26 +305,26 @@ const Songs = () => {
         // Store the updated data back into localStorage
         localStorage.setItem("likeData", JSON.stringify(updatedData));
       
-        // Toast notification with premium styling for removal
+        // Toast notification for successful removal
         toast(`Song (${i?.name}) removed successfully.`, {
           icon: "⚠️",
           duration: 1500,
           position: "bottom-center", // Position at the bottom center of the screen
           style: {
-            borderRadius: "10px", // Rounded corners for premium look
+            borderRadius: "10px", // Rounded corners for a premium look
             width: "fit-content", // Auto-size based on content
             maxWidth: "80%", // Prevents it from being too wide on larger screens
-            background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
-            color: "#ffffff", // White text for readability
-            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth effect
-            padding: "12px 20px", // Extra padding for spacing
-            fontSize: "0.9rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            lineHeight: "1.2", // Line height for better readability
+            background: "linear-gradient(135deg, #333, #444)", // Smooth gradient for contrast
+            color: "#e0e0e0", // Light color for text
+            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Stronger shadow for depth
+            padding: "12px 20px", // Extra padding for better spacing
+            fontSize: "0.9rem", // Slightly smaller font size for better fit
+            fontWeight: "bold", // Bold text for emphasis
+            textAlign: "center", // Center the text
+            display: "flex", // Flexbox layout for centering
+            alignItems: "center", // Center vertically
+            justifyContent: "center", // Center horizontally
+            lineHeight: "1.2", // Improved line height for readability
             borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
           },
         });
