@@ -242,15 +242,26 @@ const Home = () => {
       toast(`Song (${i?.name}) added to Likes section`, {
         icon: "✅",
         duration: 1500,
+        position: "bottom-center", // Position at the bottom center of the screen
         style: {
-          borderRadius: "8px",
+          borderRadius: "10px", // Slightly rounded corners for a premium look
+          width: "fit-content", // Auto-size based on content
+          maxWidth: "80%", // Limit width for larger screens
           background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
           color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Stronger shadow for depth
+          padding: "12px 20px", // Extra padding for better spacing
+          fontSize: "0.9rem", // Slightly reduced font size for better fit
+          fontWeight: "bold", // Bold text for emphasis
+          textAlign: "center", // Center the text
+          display: "flex", // Flexbox layout for centering
+          alignItems: "center", // Center vertically
+          justifyContent: "center", // Center horizontally
+          lineHeight: "1.2", // Improved line height for readability
+          borderLeft: "5px solid #4caf50", // Green accent for "added" action
         },
-      });    
+      });
+          
     } else {
       // setlike(true);
       // Otherwise, inform the user that the song is already liked
@@ -286,15 +297,26 @@ const Home = () => {
         toast(`Song (${i?.name}) removed successfully.`, {
           icon: "⚠️",
           duration: 1500,
-        style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
-        },
+          position: "bottom-center", // Position at the bottom center of the screen
+          style: {
+            borderRadius: "10px", // Rounded corners for a premium look
+            width: "fit-content", // Auto-size based on content
+            maxWidth: "80%", // Prevents it from being too wide on larger screens
+            background: "linear-gradient(135deg, #333, #444)", // Smooth gradient for depth
+            color: "#e0e0e0", // Light color for text
+            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth effect
+            padding: "12px 20px", // Extra padding for spacing
+            fontSize: "0.9rem", // Consistent font size
+            fontWeight: "bold", // Bold text for emphasis
+            textAlign: "center", // Center text for alignment
+            display: "flex", // Flexbox layout for better alignment
+            alignItems: "center", // Center align items vertically
+            justifyContent: "center", // Center align items horizontally
+            lineHeight: "1.2", // Line height for better readability
+            borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
+          },
         });
+        
 
         // if (index>0 && details.length>=0) {
         //     setrerender(!rerender)

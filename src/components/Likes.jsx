@@ -387,18 +387,28 @@ function pre() {
 
       // Store the updated data back into localStorage
       localStorage.setItem("likeData", JSON.stringify(updatedData));
-      //   console.log("Song removed successfully.");
-      // toast.success("Song removed successfully. 🚮");
-      toast(`Song removed successfully.`, {
-        icon: "✅",
+      
+      // Toast notification with premium styling for removing a song
+      toast(`Song (${i?.name}) removed successfully.`, {
+        icon: "⚠️",
         duration: 1500,
+        position: "bottom-center", // Position at the bottom center of the screen
         style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
+          borderRadius: "10px", // Slightly rounded for a premium look
+          width: "fit-content", // Auto-size based on content
+          maxWidth: "80%", // Limit width for larger screens
+          background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
+          color: "#ffffff", // White text for readability
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth
+          padding: "12px 20px", // Extra padding for spacing
+          fontSize: "0.9rem",
+          fontWeight: "bold",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          lineHeight: "1.2", // Line height for better text readability
+          borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
         },
       });
       setrerender(!rerender);

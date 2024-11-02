@@ -98,20 +98,32 @@ const AlbumDetails = () => {
       // Store the updated data back into localStorage
       localStorage.setItem("likeData", JSON.stringify(updatedData));
       setlike(true);
-      // toast.success(`Song (${i?.name}) added to Likes section. ✅`);
+      
+      // Toast notification with premium styling for adding a song
       toast(`Song (${i?.name}) added to Likes section`, {
         icon: "✅",
         duration: 1500,
+        position: "bottom-center", // Position at the bottom center of the screen
         style: {
-          borderRadius: "8px",
+          borderRadius: "10px", // Slightly rounded corners for a premium look
+          width: "fit-content", // Auto-size based on content
+          maxWidth: "80%", // Limit width for larger screens
           background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
           color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Stronger shadow for depth
+          padding: "12px 20px", // Extra padding for better spacing
+          fontSize: "0.9rem", // Slightly reduced font size for better fit
+          fontWeight: "bold", // Bold text for emphasis
+          textAlign: "center", // Center the text
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          lineHeight: "1.2", // Improved line height for readability
+          borderLeft: "5px solid #4caf50", // Green accent for "added" action
         },
       });
-    } else {
+    }
+     else {
       // setlike(true);
       // Otherwise, inform the user that the song is already liked
       // console.log("You've already liked this song.");
@@ -132,25 +144,36 @@ const AlbumDetails = () => {
       const indexToRemove = updatedData.findIndex((item) => item.id === i.id);
 
       // If the song is found, remove it from the array
-      if (indexToRemove !== -1) {
-        updatedData.splice(indexToRemove, 1);
+if (indexToRemove !== -1) {
+  updatedData.splice(indexToRemove, 1);
 
-        // Store the updated data back into localStorage
-        localStorage.setItem("likeData", JSON.stringify(updatedData));
-        //   console.log("Song removed successfully.");
-        // toast.success(`Song (${i?.name}) removed successfully. 🚮`);
-        toast(`Song (${i?.name}) removed successfully.`, {
-          icon: "⚠️",
-          duration: 1500,
-        style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
-        },
-        });
+  // Store the updated data back into localStorage
+  localStorage.setItem("likeData", JSON.stringify(updatedData));
+
+  // Toast notification with premium styling for removing a song
+  toast(`Song (${i?.name}) removed successfully.`, {
+    icon: "⚠️",
+    duration: 1500,
+    position: "bottom-center", // Position at the bottom center of the screen
+    style: {
+      borderRadius: "10px", // Slightly rounded corners for a premium look
+      width: "fit-content", // Auto-size based on content
+      maxWidth: "80%", // Limit width for larger screens
+      background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
+      color: "#e0e0e0", // Light color for text
+      boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Stronger shadow for depth
+      padding: "12px 20px", // Extra padding for better spacing
+      fontSize: "0.9rem", // Slightly reduced font size for better fit
+      fontWeight: "bold", // Bold text for emphasis
+      textAlign: "center", // Center the text
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      lineHeight: "1.2", // Improved line height for readability
+      borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
+    },
+  });
+
 
         // if (index>0 && details.length>=0) {
         //     setrerender(!rerender)
@@ -188,21 +211,33 @@ const AlbumDetails = () => {
       updatedData.push(i);
       // Store the updated data back into localStorage
       localStorage.setItem("likeData", JSON.stringify(updatedData));
-      setlike2(!like2);
-      // toast.success(`Song (${i?.name}) added to Likes section. ✅`);
+      setlike(true);
+      
+      // Toast notification with premium styling for adding a song
       toast(`Song (${i?.name}) added to Likes section`, {
         icon: "✅",
         duration: 1500,
+        position: "bottom-center", // Position at the bottom center of the screen
         style: {
-          borderRadius: "8px",
+          borderRadius: "10px", // Slightly rounded corners for a premium look
+          width: "fit-content", // Auto-size based on content
+          maxWidth: "80%", // Limit width for larger screens
           background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
           color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Stronger shadow for depth
+          padding: "12px 20px", // Extra padding for better spacing
+          fontSize: "0.9rem", // Slightly reduced font size for better fit
+          fontWeight: "bold", // Bold text for emphasis
+          textAlign: "center", // Center the text
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          lineHeight: "1.2", // Improved line height for readability
+          borderLeft: "5px solid #4caf50", // Green accent for "added" action
         },
       });
-    } else {
+    }
+     else {
       // setlike(true);
       // Otherwise, inform the user that the song is already liked
       // console.log("You've already liked this song.");
@@ -223,25 +258,35 @@ const AlbumDetails = () => {
       const indexToRemove = updatedData.findIndex((item) => item.id === i.id);
 
       // If the song is found, remove it from the array
-      if (indexToRemove !== -1) {
-        updatedData.splice(indexToRemove, 1);
+if (indexToRemove !== -1) {
+  updatedData.splice(indexToRemove, 1);
 
-        // Store the updated data back into localStorage
-        localStorage.setItem("likeData", JSON.stringify(updatedData));
-        //   console.log("Song removed successfully.");
-        // toast.success(`Song (${i?.name}) removed successfully. 🚮`);
-        toast(`Song (${i?.name}) removed successfully.`, {
-          icon: "⚠️",
-          duration: 1500,
-          style: {
-            borderRadius: "8px",
-            background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-            color: "#e0e0e0", // Light color for text
-            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-            padding: "12px 16px",
-            fontSize: "0.95rem", // Slightly larger font for readability
-          },
-        });
+  // Store the updated data back into localStorage
+  localStorage.setItem("likeData", JSON.stringify(updatedData));
+
+  // Toast notification with premium styling for removing a song
+  toast(`Song (${i?.name}) removed successfully.`, {
+    icon: "⚠️",
+    duration: 1500,
+    position: "bottom-center", // Position at the bottom center of the screen
+    style: {
+      borderRadius: "10px", // Slightly rounded corners for a premium look
+      width: "fit-content", // Auto-size based on content
+      maxWidth: "80%", // Limit width for larger screens
+      background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
+      color: "#e0e0e0", // Light color for text
+      boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Stronger shadow for depth
+      padding: "12px 20px", // Extra padding for better spacing
+      fontSize: "0.9rem", // Slightly reduced font size for better fit
+      fontWeight: "bold", // Bold text for emphasis
+      textAlign: "center", // Center the text
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      lineHeight: "1.2", // Improved line height for readability
+      borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
+    },
+  });
 
         // if (index>0 && details.length>=0) {
         //     setrerender(!rerender)
@@ -566,51 +611,48 @@ const AlbumDetails = () => {
   </div>
 
   <motion.div
-    className={
-      songlink.length > 0
-        ? `duration-700 flex fixed z-[99] bottom-0 gap-3 items-center w-full py-3 sm:h-[30vh] h-[20vh] backdrop-blur-xl`
-        : "block"
-    }
-  >
-    {songlink?.map((e, i) => (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        key={i}
-        className="flex sm:block w-full sm:w-full sm:h-full items-center justify-center gap-3"
+        className={
+          songlink.length > 0
+            ? `duration-700 flex  fixed z-[99] bottom-0  gap-3 items-center  w-full backdrop-blur-xl  py-3 sm:h-[30vh] max-h-[30vh]  `
+            : "block"
+        }
       >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="w-[25vw] sm:w-full flex gap-3 items-center sm:justify-center rounded-md h-[7vw] sm:h-[30vw] bg-slate-600 shadow-lg" // Added shadow-lg
-        >
-          <p className="text-green-400">{index + 1}</p>
-          <motion.img
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="rounded-md h-[7vw] sm:h-[25vw]"
-            src={e?.image[2]?.url}
-            alt=""
-          />
-          <h3 className="sm:w-[30%] text-white text-xs font-semibold">
-            {e?.name}
-          </h3>
-          <i
-            onClick={() =>
-              handleDownloadSong(e?.downloadUrl[4].url, e.name)
-            }
-            className="hidden sm:flex cursor-pointer items-center justify-center bg-green-700 sm:w-[9vw] sm:h-[9vw] w-[3vw] h-[3vw] rounded-full text-2xl ri-download-line"
-          ></i>
+        {songlink?.map((e, i) => (
+          <motion.div
+            initial={{ y: 50, opacity: 0, scale: 0 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            key={i}
+            className="flex sm:block w-full sm:w-full sm:h-full items-center justify-center gap-3"
+          >
+            <motion.div
+              initial={{ x: -50, opacity: 0, scale: 0 }}
+              animate={{ x: 0, opacity: 1, scale: 1 }}
+              className="w-[25vw] sm:w-full  flex gap-3 items-center sm:justify-center rounded-md  h-[7vw] sm:h-[30vw]"
+            >
+              <p className="text-green-400">{index+1}</p>
+              <motion.img
+                initial={{ x: -50, opacity: 0, scale: 0 }}
+                animate={{ x: 0, opacity: 1, scale: 1 }}
+                className="rounded-md  h-[7vw] sm:h-[25vw]"
+                src={e?.image[2]?.url}
+                alt=""
+              />
+              <h3 className=" sm:w-[30%] text-white text-xs font-semibold">
+                {e?.name}
+              </h3>
+              <i
+                onClick={() =>
+                  handleDownloadSong(e?.downloadUrl[4].url, e.name)
+                }
+                className="hidden sm:flex  cursor-pointer  items-center justify-center bg-green-700 sm:w-[9vw] sm:h-[9vw] w-[3vw] h-[3vw]   rounded-full text-2xl ri-download-line"
+              ></i>
 
-          <i
-            onClick={() => likehandle(e)}
-            className={`text-xl hover:scale-150 sm:hover:scale-100 duration-300 cursor-pointer ${
-              like ? "text-red-500" : "text-zinc-300"
-            } ri-heart-3-fill`}
-          ></i>
+              <i
+                onClick={() => likehandle(e)}
+                className={`text-xl hover:scale-150 sm:hover:scale-100 duration-300 cursor-pointer ${
+                  like ? "text-red-500" : "text-zinc-300"
+                }  ri-heart-3-fill`}
+              ></i>
         </motion.div>
 
         <motion.div

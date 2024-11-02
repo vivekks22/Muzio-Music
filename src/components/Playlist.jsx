@@ -81,8 +81,67 @@ const Playlist = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.7 }}
-      className="w-full h-[100vh] bg-black" // Changed from bg-slate-700 to bg-black
+      className="w-full h-[100vh] bg-black"
     >
+      <style>
+        {`
+          body {
+            background-color: #1a1a1a; /* Dark background */
+            color: #e0e0e0; /* Light text color for contrast */
+            font-family: 'Arial', sans-serif; /* Example font, change as needed */
+          }
+          
+          .search {
+            background-color: #222; /* Search bar background */
+            border-radius: 10px; /* Rounded corners for the search bar */
+            padding: 10px;
+          }
+          
+          input[type="search"] {
+            background-color: #333; /* Input field background */
+            color: #fff; /* Input text color */
+            border: none; /* Remove border */
+            outline: none; /* Remove outline */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Add some padding for better appearance */
+            width: 100%; /* Full width */
+          }
+          
+          .album-card {
+            position: relative;
+            background-color: #444; /* Album card background */
+            color: white; /* Album card text color */
+            width: 180px; /* Square width */
+            height: 180px; /* Square height */
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden; /* Clip the corners */
+            transition: transform 0.3s; /* Animation for hover effect */
+            cursor: pointer; /* Change cursor to pointer on hover */
+          }
+          
+          .album-card:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+          }
+          
+          .album-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure image covers the card */
+          }
+          
+          .album-title {
+            position: absolute;
+            bottom: 10px; /* Position title at the bottom */
+            left: 5px; /* Left padding */
+            right: 5px; /* Right padding */
+            text-align: center; /* Center text */
+            font-size: 16px; /* Font size for the album title */
+            overflow: hidden; /* Hide overflow text */
+            text-overflow: ellipsis; /* Add ellipsis for long text */
+            white-space: nowrap; /* Prevent text wrapping */
+          }
+        `}
+      </style>
       <Toaster position="top-center" reverseOrder={false} />
       <motion.div className="w-full h-[100vh] ">
         <motion.div
@@ -99,21 +158,19 @@ const Playlist = () => {
             className="bg-black rounded-md p-3 sm:text-sm text-white border-none outline-none w-[50%] sm:w-[50%] sm:h-[7vh] h-[10vh]"
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown} // Add key down event
-            placeholder="Search anything like 2023 hindi"
+            placeholder="Search anything like 2024 hindi"
             type="search"
           />
           <button
-  onClick={searchClick}
-  className="duration-300 cursor-pointer text-xl p-2 rounded-md hover:scale-90 flex items-center justify-center"
-  style={{ background: "linear-gradient(135deg, #6e5fda, #5e58ba)" }} // Apply gradient background
->
-  <i className="ri-search-2-line text-white"></i> {/* Icon color remains white */}
-</button>
-
-          
+            onClick={searchClick}
+            className="duration-300 cursor-pointer text-xl p-2 rounded-md hover:scale-90 flex items-center justify-center"
+            style={{ background: "linear-gradient(135deg, #6e5fda, #5e58ba)" }} // Apply gradient background
+          >
+            <i className="ri-search-2-line text-white"></i> {/* Icon color remains white */}
+          </button>
         </motion.div>
-        
-        <motion.div className="w-full overflow-hidden overflow-y-auto h-[85vh] sm:min-h-[85vh] flex flex-wrap p-5 gap-5 justify-center bg-black"> {/* Changed from bg-slate-700 to bg-black */}
+
+        <motion.div className="w-full overflow-hidden overflow-y-auto h-[85vh] sm:min-h-[85vh] flex flex-wrap p-5 gap-5 justify-center bg-black">
           {playlist?.map((e, i) => (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -121,14 +178,14 @@ const Playlist = () => {
               transition={{ ease: "easeInOut", duration: 0.5, delay: i * 0.1 }} // staggered animation for each item
               key={i}
               onClick={() => navigate(`/playlist/details/${e.id}`)}
-              className="w-[15vw] h-[30vh] sm:w-[40vw] mb-8 sm:h-[20vh] sm:mb-12 rounded-md bg-red-200 cursor-pointer"
+              className="album-card"
             >
               <img
-                className="w-full h-full object-fill rounded-md"
+                className="album-image"
                 src={e?.image[2]?.url}
                 alt=""
               />
-              <h3 className="text-white">{e.name}</h3>
+              <h3 className="album-title">{e.name}</h3>
             </motion.div>
           ))}
         </motion.div>

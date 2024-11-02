@@ -99,20 +99,32 @@ const PlaylistDetails = () => {
       // Store the updated data back into localStorage
       localStorage.setItem("likeData", JSON.stringify(updatedData));
       setlike(true);
-      // toast.success(`Song (${i?.name}) added to Likes section ✅`);
+    
+      // Toast notification with premium styling for adding a song
       toast(`Song (${i?.name}) added to Likes section`, {
         icon: "✅",
         duration: 1500,
+        position: "bottom-center", // Position at the bottom center of the screen
         style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
+          borderRadius: "10px", // Slightly rounded for premium look
+          width: "fit-content", // Auto-size based on content
+          maxWidth: "80%", // Limits width for larger screens
+          background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
+          color: "#ffffff", // White text for readability
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth effect
+          padding: "12px 20px", // Extra padding for spacing
+          fontSize: "0.9rem",
+          fontWeight: "bold",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          lineHeight: "1.2", // Line height for readability
+          borderLeft: "5px solid #4CAF50", // Green accent for "added" action
         },
       });
-    } else {
+    }
+     else {
       // setlike(true);
       // Otherwise, inform the user that the song is already liked
       // console.log("You've already liked this song.");
@@ -132,26 +144,36 @@ const PlaylistDetails = () => {
       // Find the index of the song with the given ID in the existing data
       const indexToRemove = updatedData.findIndex((item) => item.id === i.id);
 
-      // If the song is found, remove it from the array
       if (indexToRemove !== -1) {
         updatedData.splice(indexToRemove, 1);
-
+      
         // Store the updated data back into localStorage
         localStorage.setItem("likeData", JSON.stringify(updatedData));
-        //   console.log("Song removed successfully.");
-        // toast.success(`Song (${i?.name}) removed successfully. 🚮`);
+      
+        // Toast notification with premium styling for removing a song
         toast(`Song (${i?.name}) removed successfully.`, {
           icon: "⚠️",
           duration: 1500,
-        style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
-        },
+          position: "bottom-center", // Position at the bottom center of the screen
+          style: {
+            borderRadius: "10px", // Slightly rounded for a premium look
+            width: "fit-content", // Auto-size based on content
+            maxWidth: "80%", // Limit width for larger screens
+            background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
+            color: "#ffffff", // White text for readability
+            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth
+            padding: "12px 20px", // Extra padding for spacing
+            fontSize: "0.9rem",
+            fontWeight: "bold",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            lineHeight: "1.2", // Line height for better text readability
+            borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
+          },
         });
+            
 
         // if (index>0 && details.length>=0) {
         //     setrerender(!rerender)
@@ -189,21 +211,33 @@ const PlaylistDetails = () => {
       updatedData.push(i);
       // Store the updated data back into localStorage
       localStorage.setItem("likeData", JSON.stringify(updatedData));
-      setlike2(!like2);
-      // toast.success(`Song (${i?.name}) added to Likes section. ✅`);
+      setlike(true);
+    
+      // Toast notification with premium styling for adding a song
       toast(`Song (${i?.name}) added to Likes section`, {
         icon: "✅",
         duration: 1500,
+        position: "bottom-center", // Position at the bottom center of the screen
         style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
+          borderRadius: "10px", // Slightly rounded for premium look
+          width: "fit-content", // Auto-size based on content
+          maxWidth: "80%", // Limits width for larger screens
+          background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
+          color: "#ffffff", // White text for readability
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth effect
+          padding: "12px 20px", // Extra padding for spacing
+          fontSize: "0.9rem",
+          fontWeight: "bold",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          lineHeight: "1.2", // Line height for readability
+          borderLeft: "5px solid #4CAF50", // Green accent for "added" action
         },
       });
-    } else {
+    }
+     else {
       // setlike(true);
       // Otherwise, inform the user that the song is already liked
       // console.log("You've already liked this song.");
@@ -226,23 +260,33 @@ const PlaylistDetails = () => {
       // If the song is found, remove it from the array
       if (indexToRemove !== -1) {
         updatedData.splice(indexToRemove, 1);
-
+      
         // Store the updated data back into localStorage
         localStorage.setItem("likeData", JSON.stringify(updatedData));
-        //   console.log("Song removed successfully.");
-        // toast.success(`Song (${i?.name}) removed successfully. 🚮`);
+      
+        // Toast notification with premium styling for removing a song
         toast(`Song (${i?.name}) removed successfully.`, {
           icon: "⚠️",
           duration: 1500,
-        style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
-        },
-        });
+          position: "bottom-center", // Position at the bottom center of the screen
+          style: {
+            borderRadius: "10px", // Slightly rounded for a premium look
+            width: "fit-content", // Auto-size based on content
+            maxWidth: "80%", // Limit width for larger screens
+            background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
+            color: "#ffffff", // White text for readability
+            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth
+            padding: "12px 20px", // Extra padding for spacing
+            fontSize: "0.9rem",
+            fontWeight: "bold",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            lineHeight: "1.2", // Line height for better text readability
+            borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
+          },
+        });      
 
         // if (index>0 && details.length>=0) {
         //     setrerender(!rerender)
@@ -561,43 +605,48 @@ const PlaylistDetails = () => {
 </div>
 
 <motion.div
-  className={`duration-700 flex fixed z-[99] bottom-0 gap-3 items-center w-full max-h-[30vh] py-3 sm:h-[30vh] backdrop-blur-xl ${
-    songlink.length > 0 ? "block" : "hidden"
-  }`}
->
-  {songlink?.map((e, i) => (
-    <motion.div
-      initial={{ y: 50, opacity: 0, scale: 0 }}
-      animate={{ y: 0, opacity: 1, scale: 1 }}
-      key={i}
-      className="flex sm:block w-full sm:w-full sm:h-full items-center justify-center gap-3"
-    >
-      <motion.div
-        initial={{ x: -50, opacity: 0, scale: 0 }}
-        animate={{ x: 0, opacity: 1, scale: 1 }}
-        className="w-[25vw] sm:w-full flex gap-3 items-center sm:justify-center rounded-lg shadow-md h-[7vw] sm:h-[30vw] bg-gray-800 border border-gray-600"
+        className={
+          songlink.length > 0
+            ? `duration-700 flex  fixed z-[99] bottom-0  gap-3 items-center  w-full backdrop-blur-xl  py-3 sm:h-[30vh] max-h-[30vh]  `
+            : "block"
+        }
       >
-        <p className="text-green-400">{index + 1}</p>
-        <motion.img
-          initial={{ x: -50, opacity: 0, scale: 0 }}
-          animate={{ x: 0, opacity: 1, scale: 1 }}
-          className="rounded-lg h-[7vw] sm:h-[25vw] shadow-md"
-          src={e?.image[2]?.url}
-          alt=""
-        />
-        <h3 className="sm:w-[30%] text-white text-xs font-semibold">
-          {e?.name}
-        </h3>
-        <i
-          onClick={() => handleDownloadSong(e.downloadUrl[4].url, e.name)}
-          className="hidden sm:flex cursor-pointer items-center justify-center bg-green-700 sm:w-[9vw] sm:h-[9vw] w-[3vw] h-[3vw] rounded-full text-2xl ri-download-line"
-        ></i>
-        <i
-          onClick={() => likehandle(e)}
-          className={`text-xl hover:scale-150 sm:hover:scale-100 duration-300 cursor-pointer ${
-            like ? "text-red-500" : "text-gray-300"
-          } ri-heart-3-fill`}
-        ></i>
+        {songlink?.map((e, i) => (
+          <motion.div
+            initial={{ y: 50, opacity: 0, scale: 0 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            key={i}
+            className="flex sm:block w-full sm:w-full sm:h-full items-center justify-center gap-3"
+          >
+            <motion.div
+              initial={{ x: -50, opacity: 0, scale: 0 }}
+              animate={{ x: 0, opacity: 1, scale: 1 }}
+              className="w-[25vw] sm:w-full  flex gap-3 items-center sm:justify-center rounded-md  h-[7vw] sm:h-[30vw]"
+            >
+              <p className="text-green-400">{index+1}</p>
+              <motion.img
+                initial={{ x: -50, opacity: 0, scale: 0 }}
+                animate={{ x: 0, opacity: 1, scale: 1 }}
+                className="rounded-md  h-[7vw] sm:h-[25vw]"
+                src={e?.image[2]?.url}
+                alt=""
+              />
+              <h3 className=" sm:w-[30%] text-white text-xs font-semibold">
+                {e?.name}
+              </h3>
+              <i
+                onClick={() =>
+                  handleDownloadSong(e?.downloadUrl[4].url, e.name)
+                }
+                className="hidden sm:flex  cursor-pointer  items-center justify-center bg-green-700 sm:w-[9vw] sm:h-[9vw] w-[3vw] h-[3vw]   rounded-full text-2xl ri-download-line"
+              ></i>
+
+              <i
+                onClick={() => likehandle(e)}
+                className={`text-xl hover:scale-150 sm:hover:scale-100 duration-300 cursor-pointer ${
+                  like ? "text-red-500" : "text-zinc-300"
+                }  ri-heart-3-fill`}
+              ></i>
       </motion.div>
 
             <motion.div

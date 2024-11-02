@@ -111,20 +111,32 @@ const ArtistsDetails = () => {
       // Store the updated data back into localStorage
       localStorage.setItem("likeData", JSON.stringify(updatedData));
       setlike(true);
-      // toast.success(`Song (${i?.name}) added to Likes section. ✅`);
+    
+      // Toast notification with premium styling for adding a song
       toast(`Song (${i?.name}) added to Likes section`, {
         icon: "✅",
         duration: 1500,
+        position: "bottom-center", // Position at the bottom center of the screen
         style: {
-          borderRadius: "8px",
+          borderRadius: "10px", // Slightly rounded for a premium look
+          width: "fit-content", // Auto-size based on content
+          maxWidth: "80%", // Limit width for larger screens
           background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
           color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth
+          padding: "12px 20px", // Extra padding for spacing
+          fontSize: "0.9rem",
+          fontWeight: "bold",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          lineHeight: "1.2", // Line height for better text readability
+          borderLeft: "5px solid #4caf50", // Green accent for "added" action
         },
       });
-    } else {
+    }
+     else {
       // setlike(true);
       // Otherwise, inform the user that the song is already liked
       // console.log("You've already liked this song.");
@@ -144,26 +156,36 @@ const ArtistsDetails = () => {
       // Find the index of the song with the given ID in the existing data
       const indexToRemove = updatedData.findIndex((item) => item.id === i.id);
 
-      // If the song is found, remove it from the array
-      if (indexToRemove !== -1) {
-        updatedData.splice(indexToRemove, 1);
+     // If the song is found, remove it from the array
+if (indexToRemove !== -1) {
+  updatedData.splice(indexToRemove, 1);
 
-        // Store the updated data back into localStorage
-        localStorage.setItem("likeData", JSON.stringify(updatedData));
-        //   console.log("Song removed successfully.");
-        // toast.success(`Song (${i?.name}) removed successfully. 🚮`);
-        toast(`Song (${i?.name}) removed successfully.`, {
-          icon: "⚠️",
-          duration: 1500,
-        style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
-        },
-        });
+  // Store the updated data back into localStorage
+  localStorage.setItem("likeData", JSON.stringify(updatedData));
+
+  // Toast notification with premium styling for removing a song
+  toast(`Song (${i?.name}) removed successfully.`, {
+    icon: "⚠️",
+    duration: 1500,
+    position: "bottom-center", // Position at the bottom center of the screen
+    style: {
+      borderRadius: "10px", // Slightly rounded for a premium look
+      width: "fit-content", // Auto-size based on content
+      maxWidth: "80%", // Limit width for larger screens
+      background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
+      color: "#e0e0e0", // Light color for text
+      boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth
+      padding: "12px 20px", // Extra padding for spacing
+      fontSize: "0.9rem",
+      fontWeight: "bold",
+      textAlign: "center",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      lineHeight: "1.2", // Line height for better text readability
+      borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
+    },
+  });
 
         // if (index>0 && details.length>=0) {
         //     setrerender(!rerender)
@@ -201,21 +223,33 @@ const ArtistsDetails = () => {
       updatedData.push(i);
       // Store the updated data back into localStorage
       localStorage.setItem("likeData", JSON.stringify(updatedData));
-      setlike2(!like2);
-      // toast.success(`Song (${i?.name}) added to Likes section. ✅`);
+      setlike(true);
+    
+      // Toast notification with premium styling for adding a song
       toast(`Song (${i?.name}) added to Likes section`, {
         icon: "✅",
         duration: 1500,
+        position: "bottom-center", // Position at the bottom center of the screen
         style: {
-          borderRadius: "8px",
+          borderRadius: "10px", // Slightly rounded for a premium look
+          width: "fit-content", // Auto-size based on content
+          maxWidth: "80%", // Limit width for larger screens
           background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
           color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth
+          padding: "12px 20px", // Extra padding for spacing
+          fontSize: "0.9rem",
+          fontWeight: "bold",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          lineHeight: "1.2", // Line height for better text readability
+          borderLeft: "5px solid #4caf50", // Green accent for "added" action
         },
       });
-    } else {
+    }
+     else {
       // setlike(true);
       // Otherwise, inform the user that the song is already liked
       // console.log("You've already liked this song.");
@@ -236,25 +270,35 @@ const ArtistsDetails = () => {
       const indexToRemove = updatedData.findIndex((item) => item.id === i.id);
 
       // If the song is found, remove it from the array
-      if (indexToRemove !== -1) {
-        updatedData.splice(indexToRemove, 1);
+if (indexToRemove !== -1) {
+  updatedData.splice(indexToRemove, 1);
 
-        // Store the updated data back into localStorage
-        localStorage.setItem("likeData", JSON.stringify(updatedData));
-        //   console.log("Song removed successfully.");
-        // toast.success(`Song (${i?.name}) removed successfully. 🚮`);
-        toast(`Song (${i?.name}) removed successfully.`, {
-          icon: "⚠️",
-          duration: 1500,
-          style: {
-            borderRadius: "8px",
-            background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-            color: "#e0e0e0", // Light color for text
-            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-            padding: "12px 16px",
-            fontSize: "0.95rem", // Slightly larger font for readability
-          },
-        });
+  // Store the updated data back into localStorage
+  localStorage.setItem("likeData", JSON.stringify(updatedData));
+
+  // Toast notification with premium styling for removing a song
+  toast(`Song (${i?.name}) removed successfully.`, {
+    icon: "⚠️",
+    duration: 1500,
+    position: "bottom-center", // Position at the bottom center of the screen
+    style: {
+      borderRadius: "10px", // Slightly rounded for a premium look
+      width: "fit-content", // Auto-size based on content
+      maxWidth: "80%", // Limit width for larger screens
+      background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
+      color: "#e0e0e0", // Light color for text
+      boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth
+      padding: "12px 20px", // Extra padding for spacing
+      fontSize: "0.9rem",
+      fontWeight: "bold",
+      textAlign: "center",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      lineHeight: "1.2", // Line height for better text readability
+      borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
+    },
+  });
 
         // if (index>0 && details.length>=0) {
         //     setrerender(!rerender)
@@ -497,7 +541,7 @@ const ArtistsDetails = () => {
   }, [songlink]);
 
   var title = songlink[0]?.name;
-  document.title = `${title ? title : "THE ULTIMATE SONGS"}`;
+  document.title = `${title ? title : "Muzio"}`;
   // console.log(details);
   // console.log(details);
   // console.log(page)
@@ -517,7 +561,7 @@ const ArtistsDetails = () => {
           onClick={() => navigate(-1)}
           className="text-3xl cursor-pointer ml-5 bg-green-500 rounded-full ri-arrow-left-line"
         ></i>
-        <h1 className="text-xl text-zinc-300 font-black">THE ULTIMATE SONGS</h1>
+        <h1 className="text-xl text-zinc-300 font-black">Muzio</h1>
       </div>
 
       <InfiniteScroll
@@ -530,52 +574,56 @@ const ArtistsDetails = () => {
         endMessage={<p className="bg-slate-700 text-zinc-300">No more items</p>}
         // endMessage={()=>nomoredata()}
       >
-        <div className="flex w-full pt-[15vh] sm:pt-[10vh] pb-[30vh] sm:pb-[35vh] text-white p-10 sm:p-3 sm:gap-3 bg-slate-700 min-h-[65vh] overflow-y-auto  sm:block flex-wrap gap-5 justify-center ">
-          {details?.map((d, i) => (
-            <div
-              title="click on song image or name to play the song"
-              key={i}
-              className="items-center justify-center relative hover:scale-95 sm:hover:scale-100 duration-150 w-[40%] flex mb-3 sm:mb-3 sm:w-full sm:flex sm:items-center sm:gap-3  rounded-md h-[10vw] sm:h-[15vh] cursor-pointer bg-slate-600  "
+        <div className="flex w-full pt-[15vh] sm:pt-[10vh] pb-[25vh] sm:pb-[35vh] text-white p-10 sm:p-3 sm:gap-3 bg-black min-h-[65vh] overflow-y-auto flex-wrap gap-5 justify-center">
+  {details?.map((d, i) => (
+    <div
+      title="Click on song image or name to play the song"
+      key={i}
+      className="relative transition-transform duration-150 w-[40%] flex mb-3 sm:mb-3 sm:w-full sm:flex sm:items-center sm:gap-3 rounded-lg shadow-lg h-[10vw] sm:h-[15vh] cursor-pointer bg-gradient-to-r from-gray-800 to-gray-700 border border-gray-600"
+    >
+      <div
+        onClick={() => audioseter(i)}
+        className="flex w-[80%] items-center"
+      >
+        <motion.img
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.7 }}
+          viewport={{ once: true }}
+          className="w-[10vw] h-[10vw] sm:h-[15vh] sm:w-[15vh] rounded-lg shadow-md"
+          src={d.image[2].url}
+          alt=""
+        />
+        <p className="pl-1 text-green-400 font-bold">{i + 1}</p>
+        <img
+          className={`absolute top-0 w-[8%] sm:w-[10%] rounded-md ${
+            d.id === songlink[0]?.id ? "block" : "hidden"
+          }`}
+          src={wavs}
+          alt=""
+        />
+        {songlink.length > 0 && (
+          <i
+            className={`absolute top-0 sm:h-[15vh] w-[10vw] h-full flex items-center justify-center text-5xl sm:w-[15vh] opacity-90 transition-transform duration-300 rounded-md ${
+              d.id === songlink[0]?.id ? "block" : "hidden"
+            } ${audiocheck ? "ri-pause-circle-fill" : "ri-play-circle-fill"}`}
+          ></i>
+        )}
+        <div className="ml-3 sm:ml-3 flex justify-center items-center gap-5 mt-2">
+          <div className="flex flex-col">
+            <h3
+              className={`text-sm sm:text-xs leading-none font-bold ${
+                d.id === songlink[0]?.id && "text-green-300"
+              }`}
             >
-              <div
-                onClick={() => audioseter(i)}
-                className="flex w-[80%] items-center"
-              >
-                <motion.img
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.7 }}
-                  viewport={{ once: true }}
-                  className="w-[10vw] h-[10vw] sm:h-[15vh] sm:w-[15vh] rounded-md"
-                  src={d.image[2].url}
-                  alt=""
-                />
-                <p className="pl-1 text-green-400">{i + 1}</p>
-                <img
-                  className={`absolute top-0 w-[8%] sm:w-[10%] rounded-md ${
-                    d.id === songlink[0]?.id ? "block" : "hidden"
-                  } `}
-                  src={wavs}
-                  alt=""
-                />
-                 {songlink.length>0 && <i className={`absolute top-0 sm:h-[15vh] w-[10vw] h-full flex items-center justify-center text-5xl sm:w-[15vh]  opacity-90  duration-300 rounded-md ${
-                      d.id === songlink[0]?.id ? "block" : "hidden"
-                    } ${audiocheck ? "ri-pause-circle-fill" :"ri-play-circle-fill" }`}></i>}
-                <div className="ml-3 sm:ml-3 flex justify-center items-center gap-5 mt-2">
-                  <div className="flex flex-col">
-                    <h3
-                      className={`text-sm sm:text-xs leading-none  font-bold ${
-                        d.id === songlink[0]?.id && "text-green-300"
-                      }`}
-                    >
-                      {d.name}
-                    </h3>
-                    <h4 className="text-xs sm:text-[2.5vw] text-zinc-300 ">
-                      {d.album.name}
-                    </h4>
-                  </div>
-                </div>
-              </div>
+              {d.name}
+            </h3>
+            <h4 className="text-xs sm:text-[2.5vw] text-gray-400">
+              {d.album.name}
+            </h4>
+          </div>
+        </div>
+      </div>
 
               {existingData?.find((element) => element?.id == d?.id) ? (
                 <i

@@ -158,20 +158,32 @@ const Songs = () => {
       // Store the updated data back into localStorage
       localStorage.setItem("likeData", JSON.stringify(updatedData));
       setlike(true);
-      // toast.success(`Song (${i?.name}) added to Likes section ✅`);
+    
+      // Toast notification with premium styling
       toast(`Song (${i?.name}) added to Likes section`, {
         icon: "✅",
         duration: 1500,
+        position: "bottom-center", // Position the toast at the bottom center
         style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
+          borderRadius: "10px", // Rounded for a premium look
+          width: "fit-content", // Adjusts width to content
+          maxWidth: "80%", // Prevents it from getting too wide
+          background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
+          color: "#ffffff", // White text for readability
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Premium shadow
+          padding: "12px 20px", // Extra padding for spacing
+          fontSize: "0.9rem",
+          fontWeight: "bold",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          lineHeight: "1.2", // For better readability
+          borderLeft: "5px solid #4CAF50", // Green accent for "added" action
         },
       });
-    } else {
+    }
+     else {
       setlike(false);
       let existingData = localStorage.getItem("likeData");
 
@@ -189,24 +201,35 @@ const Songs = () => {
       // If the song is found, remove it from the array
       if (indexToRemove !== -1) {
         updatedData.splice(indexToRemove, 1);
-
+      
         // Store the updated data back into localStorage
         localStorage.setItem("likeData", JSON.stringify(updatedData));
-        //   console.log("Song removed successfully.");
-        // toast.success(`Song (${i?.name}) removed successfully. 🚮`);
+      
+        // Toast notification with premium styling for removal
         toast(`Song (${i?.name}) removed successfully.`, {
           icon: "⚠️",
           duration: 1500,
-        style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
-        },
+          position: "bottom-center", // Position at the bottom center of the screen
+          style: {
+            borderRadius: "10px", // Rounded corners for premium look
+            width: "fit-content", // Auto-size based on content
+            maxWidth: "80%", // Prevents it from being too wide on larger screens
+            background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
+            color: "#ffffff", // White text for readability
+            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth effect
+            padding: "12px 20px", // Extra padding for spacing
+            fontSize: "0.9rem",
+            fontWeight: "bold",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            lineHeight: "1.2", // Line height for better readability
+            borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
+          },
         });
-      } else {
+      }
+       else {
         toast.error("Song not found in localStorage.");
         //   console.log("Song not found in localStorage.");
       }
@@ -233,21 +256,33 @@ const Songs = () => {
       updatedData.push(i);
       // Store the updated data back into localStorage
       localStorage.setItem("likeData", JSON.stringify(updatedData));
-      setlike2(!like2);
-      // toast.success(`Song (${i?.name}) added to Likes section. ✅`);
+      setlike(true);
+    
+      // Toast notification with premium styling
       toast(`Song (${i?.name}) added to Likes section`, {
         icon: "✅",
         duration: 1500,
+        position: "bottom-center", // Position the toast at the bottom center
         style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
+          borderRadius: "10px", // Rounded for a premium look
+          width: "fit-content", // Adjusts width to content
+          maxWidth: "80%", // Prevents it from getting too wide
+          background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
+          color: "#ffffff", // White text for readability
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Premium shadow
+          padding: "12px 20px", // Extra padding for spacing
+          fontSize: "0.9rem",
+          fontWeight: "bold",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          lineHeight: "1.2", // For better readability
+          borderLeft: "5px solid #4CAF50", // Green accent for "added" action
         },
       });
-    } else {
+    }
+     else {
 
       setlike2(!like2);
       let existingData = localStorage.getItem("likeData");
@@ -266,24 +301,35 @@ const Songs = () => {
       // If the song is found, remove it from the array
       if (indexToRemove !== -1) {
         updatedData.splice(indexToRemove, 1);
-
+      
         // Store the updated data back into localStorage
         localStorage.setItem("likeData", JSON.stringify(updatedData));
-        //   console.log("Song removed successfully.");
-        // toast.success(`Song (${i?.name}) removed successfully. 🚮`);
+      
+        // Toast notification with premium styling for removal
         toast(`Song (${i?.name}) removed successfully.`, {
           icon: "⚠️",
           duration: 1500,
-        style: {
-          borderRadius: "8px",
-          background: "linear-gradient(135deg, #333, #444)", // Smooth gradient
-          color: "#e0e0e0", // Light color for text
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)", // Premium shadow
-          padding: "12px 16px",
-          fontSize: "0.95rem", // Slightly larger font for readability
-        },
+          position: "bottom-center", // Position at the bottom center of the screen
+          style: {
+            borderRadius: "10px", // Rounded corners for premium look
+            width: "fit-content", // Auto-size based on content
+            maxWidth: "80%", // Prevents it from being too wide on larger screens
+            background: "rgba(50, 50, 50, 0.9)", // Dark background for contrast
+            color: "#ffffff", // White text for readability
+            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.7)", // Shadow for depth effect
+            padding: "12px 20px", // Extra padding for spacing
+            fontSize: "0.9rem",
+            fontWeight: "bold",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            lineHeight: "1.2", // Line height for better readability
+            borderLeft: "5px solid #ff9800", // Orange accent for "removed" action
+          },
         });
-      } else {
+      }
+       else {
         toast.error("Song not found in localStorage.");
         //   console.log("Song not found in localStorage.");
       }
