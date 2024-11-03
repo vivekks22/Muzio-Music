@@ -834,26 +834,27 @@ const Home = () => {
         </div>
 
         {
-  <div className="trending flex flex-col gap-3 w-full">
-    <h3 className="text-xl h-[5vh] font-semibold">Trending Albums</h3>
-    <motion.div className="playlistsdata px-5 sm:px-3 flex flex-shrink gap-5 overflow-x-auto overflow-hidden w-full">
-      {home?.trending?.albums.map((t, i) => (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }} // Start slightly smaller and below
-          whileInView={{ opacity: 1, scale: 1, y: 0 }} // Fade in and slide up
-          transition={{ type: "spring", stiffness: 100, damping: 15 }} // Spring effect for natural movement
-          key={i}
-          className="relative hover:scale-105 duration-200 flex-shrink-0 w-[15%] sm:w-[40%] rounded-md flex flex-col gap-1 py-4 cursor-pointer"
-        >
-          <img
-            className="w-full rounded-md"
-            src={t.image[2].link}
-            alt=""
-          />
-        </motion.div>
-      ))}
-    </motion.div>
-  </div>
+   <div className="trending flex flex-col gap-3 w-full ">
+   <h3 className="text-xl h-[5vh] font-semibold">Trending Albums</h3>
+   <div className="playlistsdata px-5 sm:px-3 flex flex-shrink  gap-5 overflow-x-auto overflow-hidden w-full ">
+     {home?.trending?.albums.map((t, i) => (
+       <Link
+         to={`/albums/details/${t.id}`}
+         key={i}
+         className="hover:scale-110 sm:hover:scale-100  duration-150 flex-shrink-0 w-[15%] sm:w-[40%] rounded-md flex flex-col gap-2 py-4"
+       >
+         <img
+           className="w-full  rounded-md"
+           src={t.image[2].link}
+           alt=""
+         />
+         
+         <h3 className="leading-none ">{t.name}</h3>
+       
+       </Link>
+     ))}
+   </div>
+ </div> 
 }
 
 <div className="charts w-full flex flex-col gap-3">
