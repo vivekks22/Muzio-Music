@@ -315,11 +315,11 @@ if (indexToRemove !== -1) {
         title: songlink[0]?.name || "",
         artist: songlink[0]?.album?.name || "",
         artwork: [
-          {
-            src: songlink[0]?.image[2]?.url || "",
-            sizes: "512x512",
-            type: "image/jpeg",
-          },
+          { src: songlink[0]?.image[2]?.url || "", sizes: "96x96", type: "image/jpeg" },
+          { src: songlink[0]?.image[2]?.url || "", sizes: "128x128", type: "image/jpeg" },
+          { src: songlink[0]?.image[2]?.url || "", sizes: "192x192", type: "image/jpeg" },
+          { src: songlink[0]?.image[2]?.url || "", sizes: "256x256", type: "image/jpeg" },
+          { src: songlink[0]?.image[2]?.url || "", sizes: "512x512", type: "image/jpeg" },
         ],
       });
   
