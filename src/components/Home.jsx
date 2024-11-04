@@ -706,56 +706,34 @@ const Home = () => {
     <div className="w-full h-screen bg-black">
   <Toaster position="top-center" reverseOrder={false} />
   <motion.div
+  initial={{ opacity: 0, y: -60 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ ease: Circ.easeInOut, duration: 0.5 }}
+  className="logo fixed z-50 top-0 w-full max-h-[15vh] flex sm:block py-1 px-6 items-center justify-between shadow-md backdrop-blur-md"
+>
+  <div className="flex items-center gap-3">
+    <img className="w-12 sm:w-16 rounded-full" src={logo} alt="Logo" />
+    <h1 className="text-3xl text-white font-bold">
+      Muzio
+    </h1>
+  </div>
+
+  <motion.div
     initial={{ opacity: 0, y: -50 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ ease: Circ.easeIn, duration: 0.5 }}
-    className="logo fixed z-[99] top-0 w-full duration-700 max-h-[20vh] flex sm:block backdrop-blur-xl py-3 px-10 sm:px-5 items-center gap-3"
+    transition={{ ease: Circ.easeInOut, duration: 0.7 }}
+    className="flex sm:pt-3 text-gray-400 sm:justify-center space-x-3"
   >
-    <div className="flex items-center sm:justify-center sm:pt-2 gap-3">
-      <img className="w-[5vw] sm:w-[10vw] rounded-full" src={logo} alt="" />
-      <h1 className="text-2xl text-white p-2 rounded-full bg-black sm:text-xl font-black">
-        Muzio
-      </h1>
-    </div>
-
-    <motion.div
-  initial={{ opacity: 0, y: -50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ ease: Circ.easeIn, duration: 1 }}
-  className="sm:flex sm:pt-3 text-zinc-400 sm:justify-center mx-4 sm:mx-0 space-y-2 sm:space-y-0 sm:space-x-4 rounded-lg backdrop-blur-lg p-4"
->
-  <h3 className="inline text-xl sm:hidden text-neutral-300 font-bold">Search</h3>
-  <Link
-    className="text-lg sm:text-sm font-semibold p-2 rounded-md hover:text-white duration-300 text-neutral-300 transition-all"
-    to="/songs"
-  >
-    Songs
-  </Link>
-  <Link
-    className="text-lg sm:text-sm font-semibold p-2 rounded-md hover:text-white duration-300 text-neutral-300 transition-all"
-    to="/playlist"
-  >
-    Playlists
-  </Link>
-  <Link
-    className="text-lg sm:text-sm font-semibold p-2 rounded-md hover:text-white duration-300 text-neutral-300 transition-all"
-    to="/artists"
-  >
-    Artists
-  </Link>
-  <Link
-    className="text-lg sm:text-sm font-semibold p-2 rounded-md hover:text-white duration-300 text-neutral-300 transition-all"
-    to="/album"
-  >
-    Album
-  </Link>
-  <Link
-    className="text-lg sm:text-sm font-semibold p-2 rounded-md hover:text-white duration-300 text-neutral-300 transition-all"
-    to="/likes"
-  >
-    Likes
-  </Link>
-</motion.div>
+    {['Songs', 'Playlists', 'Artists', 'Albums', 'Likes'].map((item, index) => (
+      <Link
+        key={index}
+        className="text-lg font-semibold p-2 rounded-md transition duration-200 ease-in-out text-gray-400 hover:text-white"
+        to={`/${item.toLowerCase()}`}
+      >
+        {item}
+      </Link>
+    ))}
+  </motion.div>
 
 
       </motion.div>
