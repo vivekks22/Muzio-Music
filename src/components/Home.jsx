@@ -722,7 +722,7 @@ const Home = () => {
     initial={{ opacity: 0, y: -50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ ease: Circ.easeInOut, duration: 0.7 }}
-    className="flex sm:pt-3 text-gray-400 sm:justify-center space-x-3"
+    className="flex sm:pt-3 text-gray-400 sm:justify-center space-x-0"
   >
     {['Songs', 'Playlists', 'Artists', 'Albums', 'Likes'].map((item, index) => (
       <Link
