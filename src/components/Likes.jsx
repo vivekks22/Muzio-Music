@@ -313,6 +313,9 @@ const MusicPlayer = () => {
       </div>
   );
 };
+const handlePlayLikedSongs = () => {
+  navigate("/music-player", { state: { songs: details } });
+};
 
 
 
