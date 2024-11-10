@@ -7,6 +7,7 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import wavs from "../../public/wavs.gif";
 import wait from "../../public/wait.gif";
+import { FaSearch } from 'react-icons/fa';
 import {
   animate,
   circIn,
@@ -704,39 +705,44 @@ const Home = () => {
 
   return details.length > 0 ? (
     <div className="w-full h-screen bg-black">
-  <Toaster position="top-center" reverseOrder={false} />
-  <motion.div
-  initial={{ opacity: 0, y: -60 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ ease: Circ.easeInOut, duration: 0.5 }}
-  className="logo fixed z-50 top-0 w-full max-h-[15vh] flex sm:block py-1 px-6 items-center justify-between shadow-md backdrop-blur-md"
->
-  <div className="flex items-center gap-3">
-    <img className="w-12 sm:w-16 rounded-full" src={logo} alt="Logo" />
-    <h1 className="text-3xl text-white font-bold">
-      Muzio
-    </h1>
-  </div>
-
-  <motion.div
-    initial={{ opacity: 0, y: -50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ ease: Circ.easeInOut, duration: 0.7 }}
-    className="flex sm:pt-3 text-gray-400 sm:justify-center space-x-0"
-  >
-    {['Songs', 'Playlists', 'Artists', 'Albums', 'Likes'].map((item, index) => (
-      <Link
-        key={index}
-        className="text-lg font-semibold p-2 rounded-md transition duration-200 ease-in-out text-gray-400 hover:text-white"
-        to={`/${item.toLowerCase()}`}
+      <Toaster position="top-center" reverseOrder={false} />
+      <motion.div
+        initial={{ opacity: 0, y: -60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: Circ.easeInOut, duration: 0.5 }}
+        className="logo fixed z-50 top-0 w-full py-4 px-6 flex flex-col sm:flex-row items-center justify-between bg-opacity-80 backdrop-blur-md shadow-md"
       >
-        {item}
-      </Link>
-    ))}
-  </motion.div>
-
-
-      </motion.div>
+        <div className="flex items-center gap-3">
+          <img className="w-12 sm:w-16 rounded-full" src={logo} alt="Logo" />
+          <h1 className="text-2xl sm:text-3xl text-white font-bold">Muzio</h1>
+        </div>
+  
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ease: Circ.easeInOut, duration: 0.7 }}
+          className="flex flex-row items-center justify-center sm:justify-start space-x-6 text-gray-400 pt-4 sm:pt-0"
+        >
+          {/* Search and Like Buttons */}
+          <div className="flex items-center">
+            {/* Search Icon */}
+            <Link
+              className="text-2xl sm:text-3xl p-2 sm:p-3 rounded-full transition duration-200 ease-in-out text-gray-400 hover:text-white hover:bg-gray-700"
+              to="/songs"
+            >
+              <FaSearch />
+            </Link>
+  
+            {/* Likes Button */}
+            <Link
+              className="text-lg sm:text-xl font-semibold p-2 sm:p-3 rounded-md transition duration-200 ease-in-out text-gray-400 hover:text-white hover:bg-gray-700"
+              to="/likes"
+            >
+              Likes
+            </Link>
+          </div>
+        </motion.div>
+        </motion.div>
       <div className="w-full  bg-black  min-h-[63vh] pt-[20vh] pb-[30vh]   text-zinc-300 p-5 flex flex-col gap-5 overflow-auto ">
         <div className="w-full   flex justify-end ">
           <Dropdown
