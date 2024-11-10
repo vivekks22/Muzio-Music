@@ -12,6 +12,7 @@ import Songs from "./components/Songs";
 import Likes from "./components/Likes";
 import SongDetails from "./components/SongDetails";
 import Import from "./components/Import";
+import MusicPlayer from "./components/MusicPlayer";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/artists/details/:id" element={<ArtistsDetails />} />
         <Route path="/likes" element={<Likes />} />
         <Route path="/import" element={<Import />} />
+        <Route path="/music-player" element={<MusicPlayer />} />
       </Routes>
   );
 };

@@ -271,6 +271,49 @@ function pre() {
     src={songlink[0]?.downloadUrl[4]?.url}
 ></audio>
 
+const MusicPlayer = () => {
+  const location = useLocation();
+  const songs = location.state?.songs || []; // Retrieve songs from state
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const audioRef = useRef(new Audio(songs[0]?.downloadUrl[4]?.url));
+
+  const playAudio = () => {
+      audioRef.current.play();
+  };
+
+  const pauseAudio = () => {
+      audioRef.current.pause();
+  };
+
+  const nextSong = () => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % songs.length);
+  };
+
+  const prevSong = () => {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + songs.length) % songs.length);
+  };
+
+  useEffect(() => {
+      if (songs.length > 0) {
+          audioRef.current.src = songs[currentIndex]?.downloadUrl[4]?.url;
+          playAudio();
+      }
+
+      return () => {
+          audioRef.current.pause();
+      };
+  }, [currentIndex, songs]);
+
+  return (
+      <div>
+          <h2>{songs[currentIndex]?.name}</h2>
+          <button onClick={prevSong}>Previous</button>
+          <button onClick={nextSong}>Next</button>
+          <audio ref={audioRef} controls autoPlay />
+      </div>
+  );
+};
+
 
 
 
