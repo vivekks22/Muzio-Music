@@ -704,75 +704,88 @@ const Home = () => {
   
 
   return details.length > 0 ? (
-    <div className="w-full h-screen bg-black">
-      <Toaster position="top-center" reverseOrder={false} />
-      <motion.div
-        initial={{ opacity: 0, y: -60 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ ease: Circ.easeInOut, duration: 0.5 }}
-        className="logo fixed z-50 top-0 w-full py-4 px-6 flex flex-col sm:flex-row items-center justify-between bg-opacity-80 backdrop-blur-md shadow-md"
-      >
-        <div className="flex items-center gap-3">
-          <img className="w-12 sm:w-16 rounded-full" src={logo} alt="Logo" />
-          <h1 className="text-2xl sm:text-3xl text-white font-bold">Muzio</h1>
-        </div>
-  
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ ease: Circ.easeInOut, duration: 0.7 }}
-          className="flex flex-row items-center justify-center sm:justify-start space-x-6 text-gray-400 pt-4 sm:pt-0"
-        >
-          {/* Search and Like Buttons */}
-          <div className="flex items-center">
-            {/* Search Icon */}
-            <Link
-              className="text-2xl sm:text-3xl p-2 sm:p-3 rounded-full transition duration-200 ease-in-out text-gray-400 hover:text-white hover:bg-gray-700"
-              to="/songs"
-            >
-              <FaSearch />
-            </Link>
-  
-            {/* Likes Button */}
-            <Link
-              className="text-lg sm:text-xl font-semibold p-2 sm:p-3 rounded-md transition duration-200 ease-in-out text-gray-400 hover:text-white hover:bg-gray-700"
-              to="/likes"
-            >
-              Likes
-            </Link>
-          </div>
-        </motion.div>
-        </motion.div>
-      <div className="w-full  bg-black  min-h-[63vh] pt-[20vh] pb-[30vh]   text-zinc-300 p-5 flex flex-col gap-5 overflow-auto ">
-        <div className="w-full   flex justify-end ">
-          <Dropdown
-            className="w-[15%] text-sm sm:w-[50%]"
-            options={options}
-            onChange={(e) => setlanguage(e.value)}
-            placeholder={language ? ` ${language}  ` : "Select language"}
-          />
-        </div>
+  <div className="w-full h-screen bg-black">
+    <Toaster position="top-center" reverseOrder={false} />
+    <motion.div
+      initial={{ opacity: 0, y: -60 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ ease: Circ.easeInOut, duration: 0.5 }}
+      className="logo fixed z-50 top-0 w-full py-4 px-6 flex flex-col sm:flex-row items-center justify-between bg-opacity-80 backdrop-blur-md shadow-md"
+    >
+      <div className="flex items-center gap-3">
+        <img className="w-12 sm:w-16 rounded-full" src={logo} alt="Logo" />
+        <h1 className="text-2xl sm:text-3xl text-white font-bold">Muzio</h1>
+      </div>
 
-        <div className="trending songs flex flex-col gap-3 w-full">
-  <h3 className="text-xl h-[5vh] font-semibold">{language} Songs</h3>
-  <motion.div className="songs px-5 sm:px-3 flex flex-shrink gap-5 overflow-x-auto overflow-hidden w-full">
-    {details?.map((t, i) => (
       <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }} // Start slightly smaller and below
-        whileInView={{ opacity: 1, scale: 1, y: 0 }} // Fade in and slide up
-        transition={{ type: "spring", stiffness: 100, damping: 15 }} // Spring effect for natural movement
-        onClick={() => audioseter(i)}
-        key={i}
-        className="relative hover:scale-105 duration-200 flex-shrink-0 w-[15%] sm:w-[40%] rounded-md flex flex-col gap-1 py-4 cursor-pointer"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: Circ.easeInOut, duration: 0.7 }}
+        className="flex flex-row items-center justify-center sm:justify-start space-x-6 text-gray-400 pt-4 sm:pt-0"
       >
-        <motion.img
-          className="relative w-full rounded-md"
-          src={t.image[2].url}
-          alt=""
-        />
+        {/* Search and Like Buttons */}
         <div className="flex items-center">
-          <p className="text-green-400">{i + 1}</p>
+          {/* Search Icon */}
+          <Link
+            className="text-2xl sm:text-3xl p-2 sm:p-3 rounded-full transition duration-200 ease-in-out text-gray-400 hover:text-white hover:bg-gray-700"
+            to="/songs"
+          >
+            <FaSearch />
+          </Link>
+
+          {/* Likes Button */}
+          <Link
+            className="text-lg sm:text-xl font-semibold p-2 sm:p-3 rounded-md transition duration-200 ease-in-out text-gray-400 hover:text-white hover:bg-gray-700"
+            to="/likes"
+          >
+            Likes
+          </Link>
         </div>
+      </motion.div>
+    </motion.div>
+    <div className="w-full bg-black min-h-[63vh] pt-[20vh] pb-[30vh] text-zinc-300 p-5 flex flex-col gap-5 overflow-auto">
+      {/* Greeting Section */}
+      <div
+        className="text-left text-white text-4xl font-semibold tracking-wider mb-4 uppercase"
+        style={{ fontFamily: "'Teko', sans-serif",opacity: 0.4 }}
+      >
+        {(() => {
+          const hour = new Date().getHours();
+          if (hour < 12) return "Good Morning";
+          if (hour < 18) return "Good Afternoon";
+          return "Good Evening";
+        })()}
+      </div>
+
+      <div className="w-full flex justify-end">
+        <Dropdown
+          className="w-[15%] text-sm sm:w-[50%]"
+          options={options}
+          onChange={(e) => setlanguage(e.value)}
+          placeholder={language ? ` ${language}  ` : "Select language"}
+        />
+      </div>
+
+      <div className="trending songs flex flex-col gap-3 w-full">
+        <h3 className="text-xl h-[5vh] font-semibold">{language} Songs</h3>
+        <motion.div className="songs px-5 sm:px-3 flex flex-shrink gap-5 overflow-x-auto overflow-hidden w-full">
+          {details?.map((t, i) => (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 100, damping: 15 }}
+              onClick={() => audioseter(i)}
+              key={i}
+              className="relative hover:scale-105 duration-200 flex-shrink-0 w-[15%] sm:w-[40%] rounded-md flex flex-col gap-1 py-4 cursor-pointer"
+            >
+              <motion.img
+                className="relative w-full rounded-md"
+                src={t.image[2].url}
+                alt=""
+              />
+              <div className="flex items-center">
+                <p className="text-green-400">{i + 1}</p>
+              </div>
 
         <img
           className={`absolute top-4 w-[20%] sm:w-[25%] rounded-md ${i === index ? "block" : "hidden"}`}
@@ -928,7 +941,15 @@ const Home = () => {
       margin: 0, // Remove default margin
     }}
   >
-    <b>Muzio</b> is not affiliated with JioSaavn. All trademarks and copyrights belong to their respective owners. All media, images, and songs are the property of their respective owners. This site is for educational purposes only.
+    <footer className="w-full text-gray-600 py-6 px-4 sm:px-8">
+  <div className="container mx-auto flex flex-col items-center sm:items-start text-center sm:text-left gap-2">
+    <p className="text-sm leading-relaxed max-w-3xl">
+      <b className="text-grey font-semibold text-base">Muzio</b> is not affiliated with JioSaavn. All trademarks and copyrights belong to their respective owners. All media, images, and songs are the property of their respective owners. This site is for educational purposes only.
+    </p>
+  </div>
+</footer>
+
+
   </p>
 </div>
 </div>
